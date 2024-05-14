@@ -1,6 +1,9 @@
 import React from "react";
-import { Container, Top, Bottom, Info, Temperature } from "./styles";
+
+import * as C from "./styles";
+
 import { FiWind, FiSun } from "react-icons/fi";
+
 import { IoWaterOutline } from "react-icons/io5";
 
 export default function Display({
@@ -15,14 +18,14 @@ export default function Display({
   const img = `https://openweathermap.org/img/wn/${icon}@4x.png`;
   const desc = description[0].toUpperCase() + description.substr(1);
   return (
-    <Container>
-      <Top>
+    <C.Container>
+      <C.Top>
         <h3>{name}</h3>
         <img src={img} />
         <h4>{desc}</h4>
-      </Top>
-      <Bottom>
-        <Info>
+      </C.Top>
+      <C.Bottom>
+        <C.Info>
           <div className="info-item">
             <FiWind size={22} color="#595959" /> <p>{wind} km/h</p>
           </div>
@@ -32,11 +35,11 @@ export default function Display({
           <div className="info-item">
             <FiSun size={22} color="#595959" /> <p>{max} MAX</p>
           </div>
-        </Info>
-        <Temperature>
+        </C.Info>
+        <C.Temperature>
           <p>{temp}</p>
-        </Temperature>
-      </Bottom>
-    </Container>
+        </C.Temperature>
+      </C.Bottom>
+    </C.Container>
   );
 }
